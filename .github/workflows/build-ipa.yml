@@ -2,8 +2,7 @@ name: Build signed IPA
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ "main" ]
+  # Signed builds require Apple signing secrets, so this workflow is manual-only.
 
 jobs:
   build:
