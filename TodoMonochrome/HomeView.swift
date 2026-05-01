@@ -214,7 +214,6 @@ private struct TodoCard: View {
 					}
 				} label: {
 					Label(item.rawValue, systemImage: item.systemImage)
-						.labelStyle(.titleAndIcon)
 						.font(.system(size: 13, weight: .semibold, design: .rounded))
 						.foregroundStyle(filter == item ? .white : Theme.textSecondary)
 						.padding(.horizontal, 14)
