@@ -29,12 +29,6 @@ if [[ ! -d "${APP_PATH}" ]]; then
   exit 1
 fi
 
-PLUGIN_PATH="${APP_PATH}/PlugIns/TodoMonochromeWidgetExtension.appex"
-if [[ ! -d "${PLUGIN_PATH}" ]]; then
-  echo "Could not find embedded widget extension at: ${PLUGIN_PATH}"
-  exit 1
-fi
-
 echo "==> Packaging IPA ..."
 TMP_DIR="$(mktemp -d)"
 mkdir -p "${TMP_DIR}/Payload"

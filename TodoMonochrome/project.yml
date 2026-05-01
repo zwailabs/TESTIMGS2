@@ -25,40 +25,14 @@ targets:
         includes:
           - "*.swift"
       - path: Resources
-    dependencies:
-      - target: TodoMonochromeWidgetExtension
-        embed: true
     info:
       path: Info.plist
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.example.TodoMonochrome
-  TodoMonochromeWidgetExtension:
-    type: app-extension
-    platform: iOS
-    entitlements:
-      path: ../TodoMonochromeWidgetExtension/TodoMonochromeWidgetExtension.entitlements
-    sources:
-      - path: ../TodoMonochromeWidgetExtension
-        includes:
-          - "*.swift"
-      - path: .
-        includes:
-          - "AppConfig.swift"
-          - "Todo.swift"
-          - "TodoStorage.swift"
-    info:
-      path: ../TodoMonochromeWidgetExtension/Info.plist
-    settings:
-      base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.example.TodoMonochrome.widget
-        SKIP_INSTALL: YES
-        APPLICATION_EXTENSION_API_ONLY: YES
-        IPHONEOS_DEPLOYMENT_TARGET: "16.0"
-        INFOPLIST_KEY_CFBundleDisplayName: Todo Widget
 schemes:
   TodoMonochrome:
     build:
       targets:
         TodoMonochrome: all
-        TodoMonochromeWidgetExtension: all
+        # Widget extension intentionally disabled for easier sideloading.

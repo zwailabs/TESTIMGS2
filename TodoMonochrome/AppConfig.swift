@@ -1,7 +1,7 @@
 import Foundation
 
 enum AppConfig {
-	static let appGroupID = "group.com.example.TodoMonochrome.shared"
+	// App Groups + widget extension are disabled for easier sideloading with free Apple IDs.
+	static let appGroupID: String? = nil
 	static let addTodoURL = URL(string: "todomonochrome://add")!
 }
-

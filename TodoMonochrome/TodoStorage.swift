@@ -5,7 +5,9 @@ enum TodoStorage {
 
 	static var fileURL: URL {
 		let fileManager = FileManager.default
-		if let sharedContainer = fileManager.containerURL(forSecurityApplicationGroupIdentifier: AppConfig.appGroupID) {
+		if let appGroupID = AppConfig.appGroupID,
+		   let sharedContainer = fileManager.containerURL(forSecurityApplicationGroupIdentifier: appGroupID)
+		{
 			return sharedContainer.appendingPathComponent(filename)
 		}
 		let documents = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
