@@ -228,14 +228,14 @@ private struct TodoCard: View {
 									Theme.cardAlt
 								}
 							},
-							in: Capsule(style: .continuous)
+							in: Capsule()
 						)
 				}
 				.buttonStyle(.plain)
 			}
 		}
 		.padding(6)
-		.background(Theme.cardAlt, in: Capsule(style: .continuous))
+		.background(Theme.cardAlt, in: Capsule())
 	}
 }
 

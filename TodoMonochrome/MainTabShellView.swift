@@ -85,8 +85,8 @@ struct MainTabShellView: View {
 			}
 			.padding(8)
 			.padding(.trailing, 62)
-			.background(Theme.cardAlt, in: Capsule(style: .continuous))
-			.overlay(Capsule(style: .continuous).stroke(Theme.stroke, lineWidth: 1))
+			.background(Theme.cardAlt, in: Capsule())
+			.overlay(Capsule().stroke(Theme.stroke, lineWidth: 1))
 			.shadow(color: Theme.shadow, radius: 16, x: 0, y: 6)
 
 			Button {
@@ -115,7 +115,7 @@ struct MainTabShellView: View {
 					.foregroundStyle(Theme.textPrimary)
 					.padding(.horizontal, 14)
 					.padding(.vertical, 10)
-					.background(Theme.card, in: Capsule(style: .continuous))
+					.background(Theme.card, in: Capsule())
 			} else {
 				VStack(spacing: 4) {
 					Image(systemName: systemImage)
