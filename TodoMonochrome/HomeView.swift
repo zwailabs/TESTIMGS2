@@ -119,7 +119,6 @@ private struct DateStripCard: View {
 		let calendar = Calendar.current
 		let startOfDay = calendar.startOfDay(for: selectedDate)
 		let weekday = calendar.component(.weekday, from: startOfDay)
-		let firstWeekday = calendar.firstWeekday // usually 1 (Sunday) in many locales
 
 		// Force Monday-based week like the mock.
 		let mondayIndex = 2
@@ -156,16 +155,7 @@ private struct DayCell: View {
 				.foregroundStyle(isSelected ? Theme.textPrimary : Theme.textTertiary)
 		}
 		.frame(width: 44, height: 56)
-		.background(
-			Group {
-				if isSelected {
-					Theme.cardAlt
-				} else {
-					Color.clear
-				}
-			},
-			in: RoundedRectangle(cornerRadius: 16, style: .continuous)
-		)
+		.background(isSelected ? Theme.cardAlt : Color.clear, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
 	}
 }
 
@@ -213,22 +203,14 @@ private struct TodoCard: View {
 						filter = item
 					}
 				} label: {
+					let pillBackground: Color = (filter == item) ? Theme.pillSelected : Theme.cardAlt
 					Label(item.rawValue, systemImage: item.systemImage)
 						.font(.system(size: 13, weight: .semibold, design: .rounded))
 						.foregroundStyle(filter == item ? .white : Theme.textSecondary)
 						.padding(.horizontal, 14)
 						.padding(.vertical, 10)
 						.frame(maxWidth: .infinity)
-						.background(
-							Group {
-								if filter == item {
-									Theme.pillSelected
-								} else {
-									Theme.cardAlt
-								}
-							},
-							in: Capsule()
-						)
+						.background(pillBackground, in: Capsule())
 				}
 				.buttonStyle(.plain)
 			}
