@@ -9,7 +9,7 @@ struct TodoMonochromeApp: App {
 			ContentView()
 				.environmentObject(router)
 				.tint(Theme.textPrimary)
-				.preferredColorScheme(.dark)
+				.preferredColorScheme(.light)
 				.onOpenURL { url in
 					router.handle(url: url)
 				}

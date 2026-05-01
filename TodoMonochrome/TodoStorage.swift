@@ -21,6 +21,10 @@ enum TodoStorage {
 		}
 	}
 
+	static func hasSavedTodos() -> Bool {
+		FileManager.default.fileExists(atPath: fileURL.path)
+	}
+
 	static func save(_ todos: [Todo]) {
 		do {
 			let data = try JSONEncoder().encode(todos)

@@ -12,3 +12,5 @@ DerivedData/
 # macOS
 .DS_Store
 
+# Local GH scraping cookies (never commit)
+ghcookies.txt
